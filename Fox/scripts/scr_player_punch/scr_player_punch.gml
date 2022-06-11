@@ -10,9 +10,9 @@ function scr_player_punch(){
 		vsp += grav
 	if move != 0
 	{
-	if movespeed < 3
-	movespeed = 3	
-	xscale = move
+		if movespeed < 3
+			movespeed = 3	
+		xscale = move
 	}
 	else
 		movespeed = 0

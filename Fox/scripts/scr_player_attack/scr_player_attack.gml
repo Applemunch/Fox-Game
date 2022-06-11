@@ -39,47 +39,47 @@ function scr_player_attack(){
 	}
 	else
 	{
-	sprite_index = spr_player_shoulderbash
-	image_speed = 0.35
-	hsp = movespeed * xscale
-	if place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)
-	{
-		if movespeed < 10
-		movespeed += 0.25
-	}
-	else
-		movespeed = 10
-	if floor(image_index) = image_number - 1
-	{
-		//if !k_run
-		state = 0
-		//else
-		//state = 5
-	}
-	if vsp < 20
-		vsp += grav
-	if (place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)) and airattack = 1
-		state = 0
-	if (place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)) and k_jump
-	{
-		airattack = 1
-		vsp = -11
-		state = 10
-		image_index = 0
-		sound(sfx_jump)
-		sprite_index = spr_player_slidejump
-	}
-	if place_meeting(x+xscale,y,obj_solid)
-	{
-		state = 3
-		vsp = -5
-		movespeed = movespeed / 2
-		image_index = 0
-		sound(sfx_bump)
-			repeat 6
-				instance_create_depth(x,y,depth,obj_hitstar)
-				instance_create_depth(x,y,depth,obj_hiteffect)
-	}
+		sprite_index = spr_player_shoulderbash
+		image_speed = 0.35
+		hsp = movespeed * xscale
+		if place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)
+		{
+			if movespeed < 10
+				movespeed += 0.25
+		}
+		else
+			movespeed = 10
+		if floor(image_index) = image_number - 1
+		{
+			//if !k_run
+			state = 0
+			//else
+			//state = 5
+		}
+		if vsp < 20
+			vsp += grav
+		if (place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)) and airattack = 1
+			state = 0
+		if (place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)) and k_jump
+		{
+			airattack = 1
+			vsp = -11
+			state = 10
+			image_index = 0
+			sound(sfx_jump)
+			sprite_index = spr_player_slidejump
+		}
+		if place_meeting(x+xscale,y,obj_solid)
+		{
+			state = 3
+			vsp = -5
+			movespeed = movespeed / 2
+			image_index = 0
+			sound(sfx_bump)
+				repeat 6
+					instance_create_depth(x,y,depth,obj_hitstar)
+					instance_create_depth(x,y,depth,obj_hiteffect)
+		}
 	}
 	/*if (!place_meeting(x,y+1,obj_solid) and !place_meeting(x,y+1,obj_slope))
 	{

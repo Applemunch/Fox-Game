@@ -76,16 +76,16 @@ function scr_player_normal(){
 		if place_meeting(x,y+1,obj_solid) or place_meeting(x,y+1,obj_slope)
 		{
 			if attackstyle = "OLD"
-			sprite_index = spr_player_attack
+				sprite_index = spr_player_attack
 			else
-			airattack = 0
+				airattack = 0
 		}
 		else
 		{
 			if attackstyle = "OLD"
-			sprite_index = spr_player_attackairprep
+				sprite_index = spr_player_attackairprep
 			else
-			airattack = 1
+				airattack = 1
 		}
 		state = 1
 		image_index = 0
